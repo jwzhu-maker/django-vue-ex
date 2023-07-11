@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Test</title>
+    <script src="https://unpkg.com/vue@3"></script>
+
+
+    <script type="module" crossorigin src="/static/playground/index-9af55d47.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/playground/index-1a6a3b92.css">
+</head>
+<body>
+<div id="shopping-list">
+  <h1>{{ header }}</h1>
+  <input type="text" placeholder="Add an item" v-model="newItem" />
+  {{ newItem }}
+  <ul>
+    <li v-for="item in items" :key="item.id">
+      {{ item.label }}
+    </li>
+  </ul>
+</div>
+
+<div id="app"></div>
+
+<script>
+  const shoppingListApp = Vue.createApp({
+    data() {
+      return {
+        header: 'Shopping List App',
+        newItem: '',
+        items: [
+          { id: 1, label: 'Milk' },
+          { id: 2, label: 'Eggs' },
+          { id: 3, label: 'Bread' },
+          { id: 4, label: 'Cheese' },
+        ],
+      }
+    },
+  })
+
+  shoppingListApp.mount('#shopping-list')
+</script>
+
+</body>
+</html>

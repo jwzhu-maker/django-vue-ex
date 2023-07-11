@@ -20,5 +20,6 @@ from storefront import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('playground/', include('playground.urls')),
-    path('', views.render_index, name='index')
+    path('', views.render_index, name='index'),
+    path('vue/', views.render_vue, name='vue')
 ]
